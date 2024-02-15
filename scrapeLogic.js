@@ -32,8 +32,8 @@ const scrapeLogic = async (res) => {
 
     // Locate the full title with a unique string
     //const textSelector = await page.waitForSelector(
-      "text/Customize and automate"
-    );
+     // "text/Customize and automate"
+   // );
     //const fullTitle = await searchResultSelector.evaluate((el) => el.textContent);
 
     // Print the full title
