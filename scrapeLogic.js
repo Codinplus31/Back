@@ -34,12 +34,12 @@ const scrapeLogic = async (res) => {
     //const textSelector = await page.waitForSelector(
      // "text/Customize and automate"
    // );
-    //const fullTitle = await searchResultSelector.evaluate((el) => el.textContent);
+    const fullTitle = await searchResultSelector.evaluate((el) => el.innerHTML);
 
     // Print the full title
    // const logStatement = ${fullTitle}`;
     console.log(searchResultSelector);
-    res.send(searchResultSelector);
+    res.send(fullTitle);
   } catch (e) {
     console.error(e);
     res.send(`Something went wrong while running Puppeteer: ${e}`);
