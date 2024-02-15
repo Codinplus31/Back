@@ -39,7 +39,7 @@ const scrapeLogic = async (res) => {
     // Print the full title
    // const logStatement = ${fullTitle}`;
     console.log(searchResultSelector);
-    res.send(fullTitle);
+    res.send(searchResultSelector);
   } catch (e) {
     console.error(e);
     res.send(`Something went wrong while running Puppeteer: ${e}`);
