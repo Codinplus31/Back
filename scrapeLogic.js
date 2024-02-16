@@ -26,8 +26,8 @@ const scrapeLogic = async (res) => {
    // await page.type(".search-box__input", "automate beyond recorder");
 
     // Wait and click on first result
-    const searchResultSelector = ".container";
-    await page.waitForSelector(searchResultSelector);
+   // const searchResultSelector = ".container";
+  //  await page.waitForSelector(searchResultSelector);
     //await page.click(searchResultSelector);
 
     // Locate the full title with a unique string
@@ -38,8 +38,11 @@ const scrapeLogic = async (res) => {
 
     // Print the full title
    // const logStatement = ${fullTitle}`;
-    console.log(searchResultSelector);
-    res.send(searchResultSelector.innerHTML);
+   // console.log(searchResultSelector);
+
+const imageUrls = await page.$$eval('img', images => images.map(img => img.src));
+    
+    res.send(imageUrls);
   } catch (e) {
     console.error(e);
     res.send(`Something went wrong while running Puppeteer: ${e}`);
