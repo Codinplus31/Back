@@ -6,7 +6,7 @@
 const puppeteer = require("puppeteer");
 
 require("dotenv").config();
-const scrape = async (){
+const scrape = async ()=>{
 const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
