@@ -1,14 +1,14 @@
-const puppeteerExtra = require("puppeteer-extra");
+//const puppeteerExtra = require("puppeteer-extra");
 
-const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+//const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 
-puppeteer.use(StealthPlugin())
+//puppeteer.use(StealthPlugin())
 const puppeteer = require("puppeteer");
 
 require("dotenv").config();
 
 const scrapeLogic = async (res) => {
-  const browser = await puppeteerExtra.launch({
+  const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -23,7 +23,7 @@ const scrapeLogic = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://www.aliexpress.com/");
+    await page.goto("https://m.aliexpress.com/category.html?spm=a2g0n.home.header-slider.4.650c76dbKJ2BMi&categoryTab=women_clothes&browser_id=a37dc6672b1046049dccd0d742a4a070&aff_trace_key=null&aff_platform=msite&m_page_id=kwtwhonnjmcawzzl18db1d1f435f01bda5f1acf350&gclid=");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
