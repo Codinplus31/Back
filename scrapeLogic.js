@@ -80,4 +80,4 @@ onst imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =>
         }
 
 
-module.exports = {scrape};
+module.exports = scrape;
