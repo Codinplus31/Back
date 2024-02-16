@@ -1,14 +1,14 @@
-const puppeteer = require("puppeteer-extra");
+const puppeteerExtra = require("puppeteer-extra");
 
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 
 puppeteer.use(StealthPlugin())
-const { executablePath } = require("puppeteer");
+const puppeteer = require("puppeteer");
 
 require("dotenv").config();
 
 const scrapeLogic = async (res) => {
-  const browser = await puppeteer.launch({
+  const browser = await puppeteerExtra.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -18,7 +18,7 @@ const scrapeLogic = async (res) => {
     executablePath:
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
-        : executablePath(),
+        : puppeteer.executablePath(),
   });
   try {
     const page = await browser.newPage();
