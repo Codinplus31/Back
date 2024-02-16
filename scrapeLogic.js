@@ -6,7 +6,7 @@
 const puppeteer = require("puppeteer");
 
 require("dotenv").config();
-const scrape = async ()=>{
+//const scrape = async ()=>{
 const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
@@ -76,8 +76,8 @@ onst imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =>
     await browser.close();
   }
 };
-    return {Tag,Explore}
-        }
+     
+       // }
 
 
-module.exports = scrape;
+module.exports = {Tag,Explore};
