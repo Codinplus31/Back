@@ -1,4 +1,8 @@
-const puppeteer = require("puppeteer");
+const { executablePath } = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+puppeteer.use(StealthPlugin())
+
 require("dotenv").config();
 
 const scrapeLogic = async (res) => {
@@ -12,7 +16,7 @@ const scrapeLogic = async (res) => {
     executablePath:
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
-        : puppeteer.executablePath(),
+        : executablePath(),
   });
   try {
     const page = await browser.newPage();
