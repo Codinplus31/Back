@@ -17,7 +17,7 @@ const scrapeLogic = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://o2tvseries2.com/");
+    await page.goto("https://www.aliexpress.com/");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
@@ -40,7 +40,7 @@ const scrapeLogic = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const imageUrls = await page.$$eval('p', images => images.map(img => img.src));
+const imageUrls = await page.$$eval('img', images => images.map(img => img.src));
     
     res.send(imageUrls);
   } catch (e) {
