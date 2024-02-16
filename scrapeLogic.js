@@ -17,7 +17,7 @@ const scrapeLogic = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://watchoutmovies.vercel.app/");
+    await page.goto("https://www.aliexpress.com");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
