@@ -6,9 +6,7 @@
 const puppeteer = require("puppeteer");
 
 require("dotenv").config();
-
-const scrapeLogic = async (res) => {
-  const browser = await puppeteer.launch({
+const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -20,6 +18,8 @@ const scrapeLogic = async (res) => {
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
   });
+const Tag = async (res) => {
+  
   try {
     const page = await browser.newPage();
 
@@ -56,5 +56,25 @@ const imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =
     await browser.close();
   }
 };
+const Explore = async (res) => {
+  
+  try {
+    const page = await browser.newPage();
 
-module.exports = { scrapeLogic };
+    await page.goto("https://m.aliexpress.com/category.html?spm=a2g0n.home.header-slider.4.650c76dbKJ2BMi&categoryTab=women_clothes&browser_id=a37dc6672b1046049dccd0d742a4a070&aff_trace_key=null&aff_platform=msite&m_page_id=kwtwhonnjmcawzzl18db1d1f435f01bda5f1acf350&gclid=");
+
+    // Set screen size
+    await page.setViewport({ width: 1080, height: 1024});
+onst imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img => img.innerHTML));
+    
+    res.send(imageUrls);
+  } catch (e) {
+    console.error(e);
+    res.send(`Something went wrong while running Puppeteer: ${e}`);
+  } finally {
+    await browser.close();
+  }
+};
+
+
+module.exports = { Tag, Explore };
