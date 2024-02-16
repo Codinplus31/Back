@@ -17,7 +17,7 @@ const scrapeLogic = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://www.aliexpress.com");
+    await page.goto("https://www.fzmovies.net/");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
