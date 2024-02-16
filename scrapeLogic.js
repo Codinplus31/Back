@@ -6,10 +6,8 @@
 const puppeteer = require("puppeteer");
 
 require("dotenv").config();
-//const scrape = async ()=>{
-
-const Tag = async (res) => {
-  const browser = await puppeteer.launch({
+const scrape = async ()=>{
+const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -21,6 +19,19 @@ const Tag = async (res) => {
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
   });
+const Tag = async (res) => {
+  /*const browser = await puppeteer.launch({
+    args: [
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath(),
+  });*/
   try {
     const page = await browser.newPage();
 
@@ -58,7 +69,7 @@ const imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =
   }
 };
 const Explore = async (res) => {
-  const browser = await puppeteer.launch({
+  /*const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -69,7 +80,7 @@ const Explore = async (res) => {
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
-  });
+  });*/
   try {
     const page = await browser.newPage();
 
@@ -77,7 +88,7 @@ const Explore = async (res) => {
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024});
-onst imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img => img.innerHTML));
+const imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img => img.innerHTML));
     
     res.send(imageUrls);
   } catch (e) {
@@ -88,7 +99,7 @@ onst imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =>
   }
 };
      
-       // }
+      }
 
 
-module.exports = {Tag,Explore};
+module.exports = scrape;
