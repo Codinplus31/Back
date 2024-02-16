@@ -46,7 +46,7 @@ const scrapeLogic = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const imageUrls = await page.$$eval('img', images => images.map(img => img.src));
+const imageUrls = await page.$$eval('_10_jv', images => images.map(img => img.innerHTML));
     
     res.send(imageUrls);
   } catch (e) {
