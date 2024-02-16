@@ -7,7 +7,9 @@ const puppeteer = require("puppeteer");
 
 require("dotenv").config();
 //const scrape = async ()=>{
-const browser = await puppeteer.launch({
+
+const Tag = async (res) => {
+  const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -19,8 +21,6 @@ const browser = await puppeteer.launch({
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
   });
-const Tag = async (res) => {
-  
   try {
     const page = await browser.newPage();
 
@@ -58,7 +58,18 @@ const imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img =
   }
 };
 const Explore = async (res) => {
-  
+  const browser = await puppeteer.launch({
+    args: [
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath(),
+  });
   try {
     const page = await browser.newPage();
 
