@@ -90,7 +90,7 @@ await page.goto("https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxX
       //https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC
 
     // Set screen size
-    await page.setViewport({ width: 1080, height: 1024});
+    await page.setViewport({ width: 400, height: 700});
 const imageUrls = await page.$$eval('[class=notranslate]', images => images.map(img => img.innerHTML));
     
     res.send(imageUrls);
