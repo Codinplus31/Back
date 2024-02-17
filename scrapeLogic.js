@@ -86,7 +86,7 @@ const Explore = async (res) => {
   });
   try {
     const page = await browser.newPage();
-await page.goto("https://campaign.aliexpress.com/wow/gcp-plus/ae/tupr?spm=a2g0n.home.choice.1.3dc876dbdWs97t&_immersiveMode=true&wx_navbar_hidden=true&wx_navbar_transparent=true&ignoreNavigationBar=true&wx_statusbar_hidden=true&wh_weex=true&wh_pid=300000557%2FChoiceFirstN&browser_id=a37dc6672b1046049dccd0d742a4a070&aff_trace_key=null&aff_platform=msite&m_page_id=kwtwhonnjmcawzzl18db7c0e5f738ef5aaed2be9c6&gclid=");
+await page.goto("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.home.header.0");
   // await page.screenshot({ path: 'screenshot.png' });
       //https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC
   
