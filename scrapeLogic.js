@@ -65,12 +65,9 @@ const doc = await page.$$eval('[class=main--card-2NMkE1D]', elem => elem.map(e =
 let title = e.querySelector(".manhattan--titleText--WccSjUS").textContent;
 let saleprice = e.querySelector(".manhattan--price-sale--1CCSZfK").textContent;
 let originalprice = e.querySelector(".manhattan--price-original--3QAcCkG").textContent;
-     return {img:img,title:title,
+     //return {img:img,title:title,saleprice:saleprice,origprice:originalprice}
              
-             saleprice:saleprice,
-             origprice:originalprice}
-             
-         
+     return e.innerHTML    
     }));
     
     res.send(doc);
