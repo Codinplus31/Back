@@ -88,7 +88,7 @@ const Explore = async (res) => {
 await page.goto("https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC");
    //await page.screenshot({ path: 'screenshot.png' });
       //https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC
-
+  
     // Set screen size
     await page.setViewport({ width: 400, height: 700});
 const imageUrls = await page.$$eval('[class=notranslate]', images => images.map(img => img.innerHTML));
