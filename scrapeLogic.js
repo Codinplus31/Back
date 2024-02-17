@@ -81,7 +81,7 @@ const Explore = async (res) => {
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
-      slowMo:100
+      
   });
   try {
     const page = await browser.newPage();
@@ -90,7 +90,7 @@ await page.goto("https://m.aliexpress.com/category.html?spm=a2g0n.home.header-sl
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024});
-const imageUrls = await page.$$eval('[class=_1O_jv]', images => images.map(img => img.innerHTML));
+const imageUrls = await page.$$eval('[class=es--wrap--1CJdhmA]', images => images.map(img => img.textContent));
     
     res.send(imageUrls);
   } catch (e) {
