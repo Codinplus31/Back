@@ -8,6 +8,11 @@ app.get("/Tag", (req, res) => {
   Tag(res);
 });
 
+app.get("/Explore", (req, res) => {
+  Explore(res);
+});
+    
+                 
 app.get("/", (req, res) => {
   res.send("Render Puppeteer server is up and running!");
 });
