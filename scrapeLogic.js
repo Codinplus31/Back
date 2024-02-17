@@ -86,7 +86,7 @@ const Explore = async (res) => {
   try {
     const page = await browser.newPage();
 await page.goto("https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC");
-   await page.screenshot({ path: 'screenshot.png' });
+   //await page.screenshot({ path: 'screenshot.png' });
       //https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC
 
     // Set screen size
