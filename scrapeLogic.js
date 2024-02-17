@@ -31,6 +31,7 @@ const Tag = async (res) => {
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
+      slowMo:100
   });
   try {
     const page = await browser.newPage();
@@ -80,6 +81,7 @@ const Explore = async (res) => {
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
+      slowMo:100
   });
   try {
     const page = await browser.newPage();
