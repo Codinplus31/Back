@@ -60,7 +60,7 @@ await page.screenshot({ path: 'screenshot.png' });
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const doc = await page.$$eval('[class=main--card-2NMkE1D]', elem => elem.map(e => {
+const doc = await page.$$eval('.main--card-2NMkE1D', elem => elem.map(e => {
  let img = e.querySelector(".product-img").src;
 let title = e.querySelector(".manhattan--titleText--WccSjUS").textContent;
 let saleprice = e.querySelector(".manhattan--price-sale--1CCSZfK").textContent;
