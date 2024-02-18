@@ -40,7 +40,7 @@ const Tag = async (res) => {
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
-await page.screenshot({ path: 'screenshot.png' });
+//await page.screenshot({ path: 'screenshot.png' });
   
     // Type into search box
    // await page.type(".search-box__input", "automate beyond recorder");
