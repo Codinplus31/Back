@@ -36,7 +36,7 @@ const Tag = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.home.header.0");
+    await page.goto("https://m.aliexpress.com/category.html?spm=a2g0n.home.header-slider.3.3dc876dbHN4yJB&categoryTab=recommend&browser_id=a37dc6672b1046049dccd0d742a4a070&aff_trace_key=null&aff_platform=msite&m_page_id=kwtwhonnjmcawzzl18db7c0e5f738ef5aaed2be9c6&gclid=");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
@@ -60,16 +60,8 @@ const Tag = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const doc = await page.$$eval('img', elem => elem.map(e => {
-// let img = e.querySelector(".product-img").src;
-//let title = e.querySelector(".manhattan--titleText--WccSjUS").textContent;
-//let saleprice = e.querySelector(".manhattan--price-sale--1CCSZfK").textContent;
-//let originalprice = e.querySelector(".manhattan--price-original--3QAcCkG").textContent;
-     //return {img:img,title:title,saleprice:saleprice,origprice:originalprice}
-             
-     return e  
-    }));
-    
+const doc = await page.$$eval('img', elem => elem.map(e => e.textContent));
+
     res.send(doc);
   } catch (e) {
     console.error(e);
