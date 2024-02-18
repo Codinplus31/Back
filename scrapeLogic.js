@@ -60,7 +60,7 @@ const Tag = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const doc = await page.$$eval('[class=_10_jv]', elem => elem.map(e => e.textContent));
+const doc = await page.$$eval('._10_jv', elem => elem.map(e => e.textContent));
 
     res.send(doc);
   } catch (e) {
