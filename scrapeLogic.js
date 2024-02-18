@@ -61,7 +61,7 @@ const Tag = async (res) => {
    // console.log(searchResultSelector);
 
 const doc = await page.$$eval('span', elem => elem.map(e => {
- let img = e.querySelector(".product-img").src;
+// let img = e.querySelector(".product-img").src;
 let title = e.querySelector(".manhattan--titleText--WccSjUS").textContent;
 let saleprice = e.querySelector(".manhattan--price-sale--1CCSZfK").textContent;
 let originalprice = e.querySelector(".manhattan--price-original--3QAcCkG").textContent;
