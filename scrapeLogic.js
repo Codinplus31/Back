@@ -93,7 +93,7 @@ await page.goto("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=histo
     // Set screen size
     await page.setViewport({ width: 340, height: 600 });
 page.setDefaultNavigationTimeout(60000);
-      const imageUrls = await page.$$eval('[class=main--card-2NMkE1D]', images => images.map(img => img.innerHTML));
+      const imageUrls = await page.$$eval('[class=product-img]', images => images.map(img => img));
     
     res.send(imageUrls);
   } catch (e) {
