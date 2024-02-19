@@ -60,7 +60,7 @@ const Tag = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const doc = await page.$$eval('img', elem => elem.map(e => e.src));
+const doc = await page.$$eval('img', elem => elem.map(e => e.src)); 
 
     res.send(doc);
   } catch (e) {
