@@ -14,7 +14,14 @@ app.get("/Explore", (req, res) => {
     
                  
 app.get("/", (req, res) => {
-  res.send("Render Puppeteer server is up and running!");
+  fetch("https://www.ebay.com/globaldeals?_trkparms=parentrq%3Ac112604d18d0ad992fa3e59affff15d8%7Cpageci%3Af16bdf6f-cf17-11ee-8990-a2eda311502c%7Ciid%3A1%7Cvlpname%3Avlp_homepage")
+  .then(e=>{
+    return e.text();
+  }).then(e=>{
+
+    
+  res.send(e);
+  })
 });
 
 app.listen(PORT, () => {
