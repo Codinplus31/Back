@@ -86,7 +86,7 @@ const Explore = async (res) => {
   });
   try {
     const page = await browser.newPage();
-await page.goto("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.category.header.0");
+await page.goto("https://www.aliexpress.com/w/wholesale-recommend.html");
   // await page.screenshot({ path: 'screenshot.png' });
       //https://www.aliexpress.com/?spm=a2g0n.category.header.2.6d4bzxXLzxXLUC
   
