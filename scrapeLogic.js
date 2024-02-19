@@ -94,7 +94,7 @@ await page.goto("https://www.aliexpress.com/w/wholesale-recommend.html");
     await page.setViewport({ width: 1080, height: 1024});
 //page.setDefaultNavigationTimeout(60000);
      // const imageUrls = await page.$$eval('img', images => images.map(img=> img.src));
-   let selector = "main--card-2NMkE1D";
+   let selector = ".main--card-2NMkE1D";
       await page.waitForSelector(selector);
 const data = await page.evaluate((selector) => {
       const e = document.querySelector(selector);
