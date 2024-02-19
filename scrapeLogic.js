@@ -36,7 +36,7 @@ const Tag = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://m.aliexpress.com/category.html?spm=a2g0n.home.header-slider.3.3dc876dbHN4yJB&categoryTab=recommend&browser_id=a37dc6672b1046049dccd0d742a4a070&aff_trace_key=null&aff_platform=msite&m_page_id=kwtwhonnjmcawzzl18db7c0e5f738ef5aaed2be9c6&gclid=");
+    await page.goto("https://www.ebay.com/globaldeals?_trkparms=parentrq%3Ac112604d18d0ad992fa3e59affff15d8%7Cpageci%3Af16bdf6f-cf17-11ee-8990-a2eda311502c%7Ciid%3A1%7Cvlpname%3Avlp_homepage");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
@@ -60,7 +60,7 @@ const Tag = async (res) => {
    // const logStatement = ${fullTitle}`;
    // console.log(searchResultSelector);
 
-const doc = await page.$$eval('[class=_1O_jv]', elem => elem.map(e => e.innerText));
+const doc = await page.$$eval('img', elem => elem.map(e => e.src));
 
     res.send(doc);
   } catch (e) {
