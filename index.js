@@ -15,13 +15,18 @@ app.get("/Explore", (req, res) => {
                  
 app.get("/", (req, res) => {
   fetch("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.category.header.0")
-  .then(e=>{
-    return e.text();
-  }).then(e=>{
+  .then(response => response.text())
+  .then(html => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    let arr = [];
+    const element = doc.querySelectorAll(".list--gallery--C2f2tvm").forEach(e=>{
+      arr.push(e)
+      });
 
-    
-  res.send(e);
-  })
+    // Do something with the selected element
+    res.send(arr);
+  });
 });
 
 app.listen(PORT, () => {
