@@ -14,7 +14,7 @@ app.get("/Explore", (req, res) => {
     
                  
 app.get("/", (req, res) => {
-  fetch("https://www.aliexpress.us/")
+  fetch("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.category.header.0")
   .then(e=>{
     return e.text();
   }).then(e=>{
