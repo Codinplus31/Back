@@ -14,7 +14,7 @@ app.get("/Explore", (req, res) => {
     
                  
 app.get("/", (req, res) => {
-  fetch("https://www.aliexpress.com/")
+  fetch("https://www.aliexpress.us/")
   .then(e=>{
     return e.text();
   }).then(e=>{
