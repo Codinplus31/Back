@@ -20,13 +20,14 @@ app.get("/", (req, res) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
     let arr = [];
-    const element = doc.querySelectorAll(".list--gallery--C2f2tvm")
-      /*.forEach(e=>{
-      arr.push(e)
-      });*/
+    const element = doc.querySelectorAll("span")
+      .forEach(e=>{
+      //arr.push(e)
+        res.send(e)
+      });
 
     // Do something with the selected element
-    res.send(element);
+    
   });
 });
 
