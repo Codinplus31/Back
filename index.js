@@ -28,7 +28,7 @@ const document = dom.window.document;
       arr.push(e)
         
       });
-res.send(e)
+res.send(html)
     // Do something with the selected element
     
   });
