@@ -23,8 +23,14 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
    
-    const element = document.querySelectorAll(".multi--titleText--nXeOvyr")
+    const element = document.querySelectorAll(".multi--outWrapper--SeJ8lrF")
       .forEach(e=>{
+       const title = document.querySelector(".multi--titleText--nXeOvyr")
+      const img = document.querySelector(".images--item--3XZa6xf")
+      const price = document.querySelector(".multi--price-sale--U-S0jtj")
+       const owner = document.querySelector(".cards--storeLink--XkKUQFS")
+      
+      
       arr.push(e.textContent)
         
       });
