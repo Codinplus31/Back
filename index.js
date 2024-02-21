@@ -32,7 +32,7 @@ const document = dom.window.document;
      const link = document.querySelector("a")
      
       
-      arr.push({title: title.textContext,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
+      arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.innerText,link:link.href})
         
       });
 res.send(arr)
