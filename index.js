@@ -22,12 +22,13 @@ app.get("/", (req, res) => {
       let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
-    const element = document.querySelectorAll("span")
+   
+    const element = document.querySelectorAll(".vl-popular-destinations--evo-v1")
       .forEach(e=>{
       arr.push(e)
         
       });
-res.send(arr)
+res.send(e)
     // Do something with the selected element
     
   });
