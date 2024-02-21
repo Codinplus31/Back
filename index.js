@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
    
-    const element = document.querySelectorAll(".images--item--3XZa6xf")
+    const element = document.querySelectorAll(".multi--price-sale--U-S0jtj")
       .forEach(e=>{
     /*   const title = e.querySelector(".multi--titleText--nXeOvyr")
       const img = e.querySelector(".images--item--3XZa6xf")
@@ -33,7 +33,7 @@ const document = dom.window.document;
      */
       
     //  arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.innerText,link:link.href})
-       arr.push(e.src)
+       arr.push(e.textContent)
       });
 res.send(arr)
     // Do something with the selected element
