@@ -29,9 +29,10 @@ const document = dom.window.document;
       const img = document.querySelector(".images--item--3XZa6xf")
       const price = document.querySelector(".multi--price-sale--U-S0jtj")
        const owner = document.querySelector(".cards--storeLink--XkKUQFS")
+     const link = document.querySelector("a")
+     
       
-      
-      arr.push({title: title,img: img,price: price,owner:owner})
+      arr.push({title: title.textContext,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
         
       });
 res.send(arr)
