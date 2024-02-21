@@ -32,8 +32,8 @@ const document = dom.window.document;
      const link = document.querySelector("a")
      
       
-      arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.innerText,link:link.href})
-        
+    //  arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.innerText,link:link.href})
+        arr.push(e.innerText)
       });
 res.send(arr)
     // Do something with the selected element
