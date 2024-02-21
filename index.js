@@ -25,15 +25,15 @@ const document = dom.window.document;
    
     const element = document.querySelectorAll(".multi--outWrapper--SeJ8lrF")
       .forEach(e=>{
-       const title = document.querySelector(".multi--titleText--nXeOvyr")
-      const img = document.querySelector(".images--item--3XZa6xf")
-      const price = document.querySelector(".multi--price-sale--U-S0jtj")
-       const owner = document.querySelector(".cards--storeLink--XkKUQFS")
-     const link = document.querySelector("a")
+       const title = e.querySelector(".multi--titleText--nXeOvyr")
+      const img = e.querySelector(".images--item--3XZa6xf")
+      const price = e.querySelector(".multi--price-sale--U-S0jtj")
+       const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+     const link = e.querySelector("a")
      
       
-    //  arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.innerText,link:link.href})
-        arr.push(e.innerText)
+      arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.innerText,link:link.href})
+       // arr.push(e.innerText)
       });
 res.send(arr)
     // Do something with the selected element
