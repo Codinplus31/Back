@@ -31,7 +31,7 @@ const document = dom.window.document;
        const owner = document.querySelector(".cards--storeLink--XkKUQFS")
       
       
-      arr.push(e.textContent)
+      arr.push({title: title,img: img,price: price,owner:owner})
         
       });
 res.send(arr)
