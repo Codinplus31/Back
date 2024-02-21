@@ -23,9 +23,9 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
    
-    const element = document.querySelectorAll(".vl-popular-destinations--evo-v1")
+    const element = document.querySelectorAll(".multi--titleText--nXeOvyr")
       .forEach(e=>{
-      arr.push(e)
+      arr.push(e.textContent)
         
       });
 res.send(html)
