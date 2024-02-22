@@ -22,24 +22,24 @@ app.get("/", (req, res) => {
       let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
-   const title = document.querySelectorAll(".multi--titleText--nXeOvyr")
-      const img = document.querySelectorAll(".images--item--3XZa6xf")
-      const price = document.querySelectorAll(".multi--price-sale--U-S0jtj")
-       const owner = document.querySelectorAll(".cards--storeLink--XkKUQFS")
-     const link = document.querySelectorAll("a")
      
   const element = document.querySelectorAll("#card-list")
      /* .forEach(e=>{
+   const title = e.querySelectorAll(".multi--titleText--nXeOvyr")
+      const img = e.querySelectorAll(".images--item--3XZa6xf")
+      const price = e.querySelectorAll(".multi--price-sale--U-S0jtj")
+       const owner = e.querySelectorAll(".cards--storeLink--XkKUQFS")
+     const link = e.querySelectorAll(".multi--container--1UZxxHY")
        
       
-    //  arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.innerText,link:link.href})
+     arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
     //   arr.push(e.textContent)
       });*/
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
    setTimeout(()=>{
      console.log(html);
-   res.send([title.length]);
+   res.send(arr);
    },2000);
   });
 });
