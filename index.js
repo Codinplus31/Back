@@ -28,7 +28,7 @@ const document = dom.window.document;
        const owner = document.querySelectorAll(".cards--storeLink--XkKUQFS")
      const link = document.querySelectorAll("a")
      
-  const element = document.querySelectorAll(".multi--price-sale--U-S0jtj")
+  const element = document.querySelectorAll("#card-list")
      /* .forEach(e=>{
        
       
@@ -37,7 +37,10 @@ const document = dom.window.document;
       });*/
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
-    res.send(html);
+    setTimeout(()=>{
+     
+   res.send(element);
+    },2000);
   });
 });
 
