@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 const document = dom.window.document;
      
   const element = document.querySelectorAll("#card-list")
-     /* .forEach(e=>{
+  .forEach(e=>{
    const title = e.querySelectorAll(".multi--titleText--nXeOvyr")
       const img = e.querySelectorAll(".images--item--3XZa6xf")
       const price = e.querySelectorAll(".multi--price-sale--U-S0jtj")
@@ -34,7 +34,7 @@ const document = dom.window.document;
       
      arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
     //   arr.push(e.textContent)
-      });*/
+      });
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
    setTimeout(()=>{
