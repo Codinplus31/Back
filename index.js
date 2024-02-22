@@ -39,7 +39,7 @@ const document = dom.window.document;
     // Do something with the selected element
   //  setTimeout(()=>{
      console.log(html);
-   res.send(title.length);
+   res.send([title.length]);
   //  },2000);
   });
 });
