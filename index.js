@@ -25,11 +25,11 @@ const document = dom.window.document;
      
   const element = document.querySelectorAll("#card-list")
   .forEach(e=>{
-   const title =document.querySelectorAll(".multi--titleText--nXeOvyr")
-      const img = document.querySelectorAll(".images--item--3XZa6xf")
-      const price = document.querySelectorAll(".multi--price-sale--U-S0jtj")
-       const owner = document.querySelectorAll(".cards--storeLink--XkKUQFS")
-     const link = document.querySelectorAll(".multi--container--1UZxxHY")
+   const title = e.querySelector(".multi--titleText--nXeOvyr")
+      const img = e.querySelector(".images--item--3XZa6xf")
+      const price = e.querySelector(".multi--price-sale--U-S0jtj")
+       const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+     const link = e.querySelector(".multi--container--1UZxxHY")
        
       
      arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
