@@ -32,15 +32,15 @@ const document = dom.window.document;
      const link = e.querySelector(".multi--container--1UZxxHY")
        
       
-     arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
+     res.send([{title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href}])
     //   arr.push(e.textContent)
       });
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
-   setTimeout(()=>{
+ //  setTimeout(()=>{
      console.log(html);
-   res.json(document.querySelectorAll("#card-list"));
-   },2000);
+ //  res.send();
+ //  },2000); 
   });
 });
 
