@@ -28,14 +28,14 @@ const document = dom.window.document;
        const owner = document.querySelectorAll(".cards--storeLink--XkKUQFS")
      const link = document.querySelectorAll("a")
      
-  /*  const element = document.querySelectorAll(".multi--price-sale--U-S0jtj")
-      .forEach(e=>{
+  const element = document.querySelectorAll(".multi--price-sale--U-S0jtj")
+     /* .forEach(e=>{
        
       
     //  arr.push({title: title.innerText,img: img.src,price: price.textContext,owner:owner.innerText,link:link.href})
     //   arr.push(e.textContent)
       });*/
-res.send([title.length,img.length,price.length, owner.length, link.length])
+res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
     
   });
