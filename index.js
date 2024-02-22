@@ -37,10 +37,10 @@ const document = dom.window.document;
       });*/
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
-    setTimeout(()=>{
+  //  setTimeout(()=>{
      
    res.send(element.length);
-    },2000);
+  //  },2000);
   });
 });
 
