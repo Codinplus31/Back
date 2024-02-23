@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
      
-  const element = Array.from(document.querySelectorAll("#card-list"))
+/*  const element = Array.from(document.querySelectorAll("#card-list"))
   .map(e=>{
    const title = e.querySelector(".multi--titleText--nXeOvyr")
       const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelector(".images--item--3XZa6xf")
@@ -34,12 +34,12 @@ const document = dom.window.document;
       
     return ({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
     //   arr.push(e.textContent)
-      });
+      });*/
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
  //  setTimeout(()=>{
      console.log(html);
-   res.send(element);
+   res.send(Array.from(document.querySelector("#card-list"));
  //  },2000); 
   });
 });
