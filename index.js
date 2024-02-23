@@ -43,7 +43,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
    //   }
  //  Len(0)
  //  Len(1)
-   res.json(["1",arr,"2",arrs])
+   res.json([{"explore":arr}])
    //  },2000); 
   });
 });
