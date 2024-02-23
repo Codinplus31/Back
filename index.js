@@ -28,7 +28,7 @@ const e = document.querySelector("#card-list")
    const title = e.querySelector(".multi--titleText--nXeOvyr")
       const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelectorAll(".images--item--3XZa6xf")[0]
       const price = e.querySelector(".multi--price-sale--U-S0jtj")
-       const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+      // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
      const link = e.querySelector(".multi--container--1UZxxHY")
        
       
@@ -40,7 +40,7 @@ const e = document.querySelector("#card-list")
  //  setTimeout(()=>{
      console.log(html);
  
-   arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.textContent,link:link.href});
+   arr.push({title: title.innerText,img: img.src,price: price.textContent,link:link.href});
 res.json(arr)
    //  },2000); 
   });
