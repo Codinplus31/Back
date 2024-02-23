@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
      
-  const element = [...document.querySelectorAll("#card-list")]
+  const element = Array.from(document.querySelectorAll("#card-list"))
   .map(e=>{
    const title = e.querySelector(".multi--titleText--nXeOvyr")
       const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelector(".images--item--3XZa6xf")
