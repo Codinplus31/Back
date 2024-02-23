@@ -22,8 +22,8 @@ app.get("/", (req, res) => {
       let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
-     function Len(l){
-const e = document.querySelectorAll("#card-list")[l]
+   //  function Len(l){
+const e = document.querySelectorAll("#card-list")[0]
   
    const title = Array.from(e.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
       const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
@@ -38,9 +38,9 @@ const e = document.querySelectorAll("#card-list")[l]
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
-        }
-   Len(0)
-   Len(1)
+   //   }
+ //  Len(0)
+ //  Len(1)
    res.json(arr)
    //  },2000); 
   });
