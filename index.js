@@ -39,8 +39,10 @@ const e = document.querySelector("#card-list")
     // Do something with the selected element
  //  setTimeout(()=>{
      console.log(html);
-   res.json({title: title.innerText,img: img.src,price: price.textContent,owner:owner.textContent,link:link.href});
- //  },2000); 
+ 
+   arr.push({title: title.innerText,img: img.src,price: price.textContent,owner:owner.textContent,link:link.href});
+res.json(arr)
+   //  },2000); 
   });
 });
 
