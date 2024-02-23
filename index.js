@@ -40,7 +40,7 @@ const e = document.querySelector("#card-list")
  //  setTimeout(()=>{
      console.log(html);
  
-   arr.push({title: title.innerText,img: img.src,price: price.textContent,link:link.href});
+   arr.push({title: title.textContent,img: img.src,price: price.textContent,link:link.href});
 res.json(arr)
    //  },2000); 
   });
