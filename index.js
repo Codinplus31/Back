@@ -26,10 +26,10 @@ const document = dom.window.document;
 const e = document.querySelector("#card-list")
   //.map(e=>{
    const title = Array.from(e.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
-      const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelectorAll(".images--item--3XZa6xf")[0]
-      const price = e.querySelector(".multi--price-sale--U-S0jtj")
+      const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
+      const price = Array.from(e.querySelectorAll(".multi--price-sale--U-S0jtj")).map(f=> f.textContent)
       // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
-     const link = e.querySelector(".multi--container--1UZxxHY")
+     const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
        
       
     //return ({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
@@ -41,7 +41,10 @@ const e = document.querySelector("#card-list")
      console.log(html);
  
   // arr.push({title: title.textContent,img: img.src,price: price.textContent,link:link.href});
-res.json(title)
+for(let i = 0; i < title.length; i++){
+arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
+                             }
+   res.json(arr)
    //  },2000); 
   });
 });
