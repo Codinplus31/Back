@@ -23,23 +23,23 @@ app.get("/", (req, res) => {
    const dom = new JSDOM(html);
 const document = dom.window.document;
      
-/*  const element = Array.from(document.querySelectorAll("#card-list"))
-  .map(e=>{
+const e = document.querySelector("#card-list")
+  //.map(e=>{
    const title = e.querySelector(".multi--titleText--nXeOvyr")
-      const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelector(".images--item--3XZa6xf")
+      const img = e.querySelector("div.images--imageWindow--1Z-J9gn").querySelectorAll(".images--item--3XZa6xf")[0]
       const price = e.querySelector(".multi--price-sale--U-S0jtj")
        const owner = e.querySelector(".cards--storeLink--XkKUQFS")
      const link = e.querySelector(".multi--container--1UZxxHY")
        
       
-    return ({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
+    //return ({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
     //   arr.push(e.textContent)
-      });*/
+  //    });
 //res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
     // Do something with the selected element
  //  setTimeout(()=>{
      console.log(html);
-   res.send(document.querySelector("#card-list").textContent);
+   res.send({title: title.innerText,img: img.src,price: price.textContent,owner:owner.textContent,link:link.href});
  //  },2000); 
   });
 });
