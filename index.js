@@ -38,10 +38,26 @@ const e = document.querySelectorAll("#card-list")[0]
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
+   let arrs = [];
+   const el = document.querySelectorAll("#card-list")[1]
+  
+   const titles = Array.from(el.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
+      const imgs = Array.from(el.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
+      const prices = Array.from(el.querySelectorAll(".multi--price-sale--U-S0jtj")).map(f=> f.textContent)
+      // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+     const links = Array.from(el.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
+       
+      
+
+     
+ 
+  for(let i = 0; i < titles.length; i++){
+arrs.push({title: titles[i],img: imgs[i],price: prices[i],link: links[i]})
+                     }
    //   }
  //  Len(0)
  //  Len(1)
-   res.json(arr)
+   res.json(["1",arr,"2",arrs])
    //  },2000); 
   });
 });
