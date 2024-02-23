@@ -22,9 +22,9 @@ app.get("/", (req, res) => {
       let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
-     
-const e = document.querySelector("#card-list")
-  //.map(e=>{
+     function Len(l){
+const e = document.querySelectorAll("#card-list")[l]
+  
    const title = Array.from(e.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
       const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
       const price = Array.from(e.querySelectorAll(".multi--price-sale--U-S0jtj")).map(f=> f.textContent)
@@ -32,18 +32,15 @@ const e = document.querySelector("#card-list")
      const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
        
       
-    //return ({title: title.innerText,img: img.src,price: price.textContext,owner:owner.textContext,link:link.href})
-    //   arr.push(e.textContent)
-  //    });
-//res.send([element.length, title.length,img.length,price.length, owner.length, link.length])
-    // Do something with the selected element
- //  setTimeout(()=>{
-     console.log(html);
+
+     
  
-  // arr.push({title: title.textContent,img: img.src,price: price.textContent,link:link.href});
-for(let i = 0; i < title.length; i++){
+  for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
+        }
+   Len(0)
+   Len(1)
    res.json(arr)
    //  },2000); 
   });
