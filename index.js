@@ -39,7 +39,7 @@ const document = dom.window.document;
     // Do something with the selected element
  //  setTimeout(()=>{
      console.log(html);
-   res.send(Array.from(document.querySelector("#card-list"));
+   res.send(document.querySelector("#card-list"));
  //  },2000); 
   });
 });
