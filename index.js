@@ -40,9 +40,12 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
    
    
-   fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text()).then(e=>{
-const cat = Array.from(document.querySelectorAll(".item")).map(f=> ({text:f.querySelector(".anchor1").textContent,href: f.querySelector(".anchor1 > a").href}))
-    const sub = Array.from(document.querySelectorAll(".sub-item-cont")).map(f=> {
+   fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text()).then(ht=>{
+const doms = new JSDOM(ht);
+const documents = doms.window.document;
+
+    const cat = Array.from(documents.querySelectorAll(".item")).map(f=> ({text:f.querySelector(".anchor1").textContent,href: f.querySelector(".anchor1 > a").href}))
+    const sub = Array.from(documents.querySelectorAll(".sub-item-cont")).map(f=> {
      return Array.from(f.querySelectorAll("li > a")).map(d=>
       ({subtitle:d.textContent,link:d.href})
       )
