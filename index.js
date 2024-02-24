@@ -46,7 +46,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
    const category = document.querySelector("ul")
    const span = Array.from(e.querySelectorAll("a")).map(f=> ({text:f.textContent,href:f.href}));
      
-   res.json([{"explore":arr},{"category":category.innerText}])
+   res.json([{"explore":arr},{"category":category.textContent}])
    //  },2000); 
   });
 });
