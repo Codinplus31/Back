@@ -50,7 +50,7 @@ const cat = Array.from(document.querySelectorAll(".item")).map(f=> ({text:f.quer
     let arr2 = [];
  for(let i = 0, t = 0;  i < cat.length, t < sub.length;  i++,t++){
 //arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
-let category = Object.assign(cat[i],{sub:sub[t]}):                      arr2.push(category);
+let category = Object.assign(cat[i],{sub:sub[t]})                  arr2.push(category);
  
  }
    res.json([{"explore":arr},{"category":arr2}])
