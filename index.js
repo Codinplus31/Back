@@ -46,7 +46,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
    const category = document.querySelector(".pc2023-category-new--item--1wh80l3")
    const span = Array.from(e.querySelectorAll("span")).map(f=> f.textContent);
      
-   res.json([{"explore":arr},{"category":span}}])
+   res.json([{"explore":arr},{"category":span}])
    //  },2000); 
   });
 });
