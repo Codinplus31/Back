@@ -40,14 +40,22 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
    
    
-   //   }
- //  Len(0)
- //  Len(1)
-   const category = Array.from(document.querySelectorAll("ul")).map(f=> f.textContent)
-   //const span = Array.from(e.querySelectorAll("a")).map(f=> ({text:f.textContent,href:f.href}));
-     
-   res.json([{"explore":arr},{"category":category}])
-   //  },2000); 
+   fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text()).then(e=>{
+const cat = Array.from(document.querySelectorAll(".item")).map(f=> ({text:f.querySelector("h3 > a").textContent,href: f.querySelector("h3 > a").href}))
+    const sub = Array.from(document.querySelectorAll(".sub-item-cont")).map(f=> {
+     return Array.from(f.querySelectorAll("li > a")).map(d=>
+      ({subtitle:d.textContent,link:d.href})
+      )
+    })
+    let arr2 = [];
+ for(let i = 0, t = 0;  i < cat.length, t < sub.length;  i++,t++){
+//arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
+let category = Object.assign(cat[i],{sub:sub[t]})):                      arr2.push(category);
+ 
+ }
+   res.json([{"explore":arr},{"category":arr2}])
+                  });
+      
   });
 });
 
