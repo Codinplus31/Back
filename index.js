@@ -43,7 +43,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
    //   }
  //  Len(0)
  //  Len(1)
-   const category = document.querySelector(".Categoey--categoryList--2QES_k6")
+   const category = document.querySelector("ul")
    const span = Array.from(e.querySelectorAll("a")).map(f=> ({text:f.textContent,href:f.href}));
      
    res.json([{"explore":arr},{"category":category.innerText}])
