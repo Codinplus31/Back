@@ -38,9 +38,10 @@ const e = document.querySelectorAll("#card-list")[0]
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
+   res.json([{"explore":arr}])
    
-   
-   fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text()).then(ht=>{
+ /*  fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text())
+    .then(ht=>{
 const doms = new JSDOM(ht);
 const documents = doms.window.document;
 
@@ -58,7 +59,7 @@ let category = Object.assign(cat[i],{sub:sub[t]})
  
  }
    res.json([{"explore":arr},{"category":arr2}])
-                  });
+                  });*/
       
   });
 });
