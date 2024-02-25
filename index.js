@@ -41,7 +41,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
   // res.json([{"explore":arr}])
    
-  fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text())
+  fetch("https://www.aliexpress.com/all-wholesale-products.html").then(red=> red.text())
     .then(ht=>{
 const doms = new JSDOM(ht);
 const documents = doms.window.document;
