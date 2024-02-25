@@ -59,7 +59,7 @@ let category = Object.assign(cat[i],{sub:sub[t]})
  arr2.push(category)
  
  } */
-   res.json([{"explore":arr},{"category":documents.querySelector(".item").textContent}])
+   res.json([{"explore":arr},{"category":documents.querySelector(".anchor1").textContent}])
                   });
       
   });
