@@ -46,7 +46,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
 const doms = new JSDOM(ht);
 const documents = doms.window.document;
 
-    const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> ({text:f.textContent.trim(),href: f.querySelector("a").href}))
+    const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> ({text:f.textContent.trim(),href: f.querySelector("span > a").href}))
   /*  const sub = Array.from(documents.querySelectorAll(".sub-item-cont")).map(f=> {
      return Array.from(f.querySelectorAll("li > a")).map(d=>
       ({subtitle:d.textContent,link:d.href})
