@@ -39,14 +39,14 @@ const e = document.querySelectorAll("#card-list")[0]
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
                              }
-   res.json([{"explore":arr}])
+  // res.json([{"explore":arr}])
    
- /*  fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text())
+  fetch("https://www.aliexpress.com/all-wholesale-products.html").then(e=> e.text())
     .then(ht=>{
 const doms = new JSDOM(ht);
 const documents = doms.window.document;
 
-    const cat = Array.from(documents.querySelectorAll(".item")).map(f=> ({text:f.querySelector(".anchor1").textContent,href: f.querySelector(".anchor1 > a").href}))
+  /*  const cat = Array.from(documents.querySelectorAll(".item")).map(f=> ({text:f.querySelector(".anchor1").textContent,href: f.querySelector(".anchor1 > a").href}))
     const sub = Array.from(documents.querySelectorAll(".sub-item-cont")).map(f=> {
      return Array.from(f.querySelectorAll("li > a")).map(d=>
       ({subtitle:d.textContent,link:d.href})
@@ -58,9 +58,9 @@ const documents = doms.window.document;
 let category = Object.assign(cat[i],{sub:sub[t]})                 
  arr2.push(category)
  
- }
-   res.json([{"explore":arr},{"category":arr2}])
-                  });*/
+ } */
+   res.json([{"explore":arr},{"category":documents.querySelector(".item")}])
+                  });
       
   });
 });
