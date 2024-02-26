@@ -47,7 +47,7 @@ const doms = new JSDOM(ht);
 const documents = doms.window.document;
 
     const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> f.textContent.trim())
-    const sub = Array.from(documents.querySelectorAll("#anchor2")).map(f=> f.querySelector('a').href)
+    const sub = Array.from(documents.querySelectorAll("#anchor2")).map(f=> f.textContent)
 let arr1 = [];
      for(let i = 0; i < cat.length; i++){
 arr.push({text: cat[i],href: sub[i]})
