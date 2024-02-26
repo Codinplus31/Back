@@ -48,9 +48,10 @@ const documents = doms.window.document;
 
     const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> f.textContent.trim())
     const sub = Array.from(documents.querySelectorAll("a")).map(f=> {
-     if(f.parentNode.tagName === "span"){
+     /*if(f.parentNode.tagName === "span"){
         return f.textContent
-     }
+     }*/
+    return f.tagName.getAttribute("id")
     })
 let arr1 = [];
      for(let i = 0; i < cat.length; i++){
