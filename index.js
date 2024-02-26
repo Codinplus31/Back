@@ -38,7 +38,7 @@ const e = document.querySelectorAll("#card-list")[0]
  
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
-                             }
+     }
   // res.json([{"explore":arr}])
    
   fetch("https://www.aliexpress.com/all-wholesale-products.html").then(red=> red.text())
@@ -46,8 +46,14 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
 const doms = new JSDOM(ht);
 const documents = doms.window.document;
 
-    const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> ({text:f.textContent.trim(),href: f.querySelector("#anchor2").children[0].href}))
-  /*  const sub = Array.from(documents.querySelectorAll(".sub-item-cont")).map(f=> {
+    const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> f.textContent.trim())
+    const sub = Array.from(documents.querySelectorAll("#anchor2")).map(f=> f.querySelector('a').href)
+let arr1 = [];
+     for(let i = 0; i < cat.length; i++){
+arr.push({text: cat[i],href: sub[i]})
+                               }
+     
+     /*  {
      return Array.from(f.querySelectorAll("li > a")).map(d=>
       ({subtitle:d.textContent,link:d.href})
       )
@@ -59,7 +65,7 @@ let category = Object.assign(cat[i],{sub:sub[t]})
  arr2.push(category)
  
  } */
-   res.json([{"explore":arr},{"category":cat}])
+   res.json([{"explore":arr},{"category":arr1}])
                   });
       
   });
