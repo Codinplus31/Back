@@ -51,7 +51,7 @@ const documents = doms.window.document;
      /*if(f.parentNode.tagName === "span"){
         return f.textContent
      }*/
-    return f.parentNode.className
+    return {text:f.parentNode.className,class:f.parentNode.textContent}
     })
 let arr1 = [];
      for(let i = 0; i < cat.length; i++){
