@@ -8,7 +8,15 @@ app.use(cors())
 const PORT = process.env.PORT || 4000;
 
 app.get("/Tag", (req, res) => {
- // Tag(res);
+
+ fetch("https://www.aliexpress.com/w/wholesale-Recommend.html?osf=history&spm=a2g0n.category.header.0")
+  .then(response => response.text())
+  .then(html => {
+  //    let arr = [];
+   const dom = new JSDOM(html);
+const document = dom.window.document;
+   
+  })
 });
 
 app.get("/Explore", (req, res) => {
