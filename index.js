@@ -48,7 +48,7 @@ const documents = doms.window.document;
 
     const cat = Array.from(documents.querySelectorAll(".anchor1")).map(f=> f.textContent.trim())
     const sub = Array.from(documents.querySelectorAll("a")).map(f=> {
-     if(f.parentNode.classList("anchor-wrap")){
+     if(f.parentNode.classList.contains("anchor-wrap")){
         return {text:f.parentNode.className,class:f.parentNode.textContent}
  
      }
