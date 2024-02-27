@@ -15,7 +15,8 @@ app.get("/Tag", (req, res) => {
   //    let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
-   
+   const title = Array.from(e.querySelectorAll("._2Eqko")).map(f=> f.textContent)
+  res.json(title)
   })
 });
 
