@@ -55,6 +55,8 @@ app.get("/Explore", (req, res) => {
   .evaluate(() => {
     // Perform scraping operations using JavaScript DOM manipulation
     // Return the scraped data
+     const dom = new JSDOM(window.document.documentElement.innerHTML);
+    const document = dom.window.document;
     const title = document.querySelector('h1').innerText;
     const paragraphs = Array.from(document.querySelectorAll('p')).map(p => p.innerText);
     return {
