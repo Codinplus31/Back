@@ -54,7 +54,7 @@ app.get("/Explore", (req, res) => {
  const $ = cheerio.load(html);
         // Use Cheerio to select and scrape the desired content from the HTML
         // Example:
-        const title = $('h1').text();
+        const title = $('#root').text();
         const paragraphs = $('p').map((index, element) => $(element).text()).get();
    res.json([title,paragraphs])
    });
