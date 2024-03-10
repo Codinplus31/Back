@@ -2,7 +2,8 @@ const express = require("express");
 //const { Tag, Explore } = require("./scrapeLogic");
 const jsdom = require("jsdom");
 const cors = require("cors");
-const cheerio = require('cheerio');
+const Nightmare = require('nightmare');
+const nightmare = Nightmare();
 // const fetch = require("node-fetch");
 const { JSDOM } = jsdom;
 const app = express();
@@ -48,16 +49,37 @@ const document = dom.window.document;
 });
 
 app.get("/Explore", (req, res) => {
- fetch("https://watchoutmovies.vercel.app/")
-  .then(response => response.text())
-  .then(html => {
- const $ = cheerio.load(html);
-        // Use Cheerio to select and scrape the desired content from the HTML
-        // Example:
-        const title = $('#root').text();
-        const paragraphs = $('p').map((index, element) => $(element).text()).get();
-   res.json([title,paragraphs])
-   });
+ nightmare
+  .goto('https://watchoutmovies.vercel.app/')
+  .wait(2000) // Optional: Add a wait time to ensure the page is fully loaded
+  .evaluate(() => {
+    // Perform scraping operations using JavaScript DOM manipulation
+    // Return the scraped data
+    const title = document.querySelector('h1').innerText;
+    const paragraphs = Array.from(document.querySelectorAll('p')).map(p => p.innerText);
+    return {
+      title,
+      paragraphs
+    };
+  })
+  .end()
+  .then(data => {
+    // Process and use the scraped data
+     res.json([data])
+  })
+  .catch(error => {
+    console.error('Error scraping website:', error);
+  });
+ // fetch("https://watchoutmovies.vercel.app/")
+ //  .then(response => response.text())
+ //  .then(html => {
+ // const $ = cheerio.load(html);
+ //        // Use Cheerio to select and scrape the desired content from the HTML
+ //        // Example:
+ //        const title = $('#root').text();
+ //        const paragraphs = $('p').map((index, element) => $(element).text()).get();
+ //   res.json([title,paragraphs])
+ //   });
 });
     
                  
