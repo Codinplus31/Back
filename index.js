@@ -2,7 +2,8 @@ const express = require("express");
 //const { Tag, Explore } = require("./scrapeLogic");
 const jsdom = require("jsdom");
 const cors = require("cors");
-const fetch = require("node-fetch");
+const cheerio = require('cheerio');
+// const fetch = require("node-fetch");
 const { JSDOM } = jsdom;
 const app = express();
 app.use(cors())
@@ -47,7 +48,16 @@ const document = dom.window.document;
 });
 
 app.get("/Explore", (req, res) => {
-  //Explore(res);
+ fetch("https://watchoutmovies.vercel.app/")
+  .then(response => response.text())
+  .then(html => {
+ const $ = cheerio.load(html);
+        // Use Cheerio to select and scrape the desired content from the HTML
+        // Example:
+        const title = $('h1').text();
+        const paragraphs = $('p').map((index, element) => $(element).text()).get();
+   res.json([title,paragraphs])
+   });
 });
     
                  
