@@ -30,7 +30,7 @@ const e = document.querySelectorAll("#card-list")[0]
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
      }
  res.json([{"explore":arr}])
-  }})
+  })
 });
 app.get("/Tag", (req, res) => {
 
