@@ -49,40 +49,32 @@ const document = dom.window.document;
 });
 
 app.get("/Explore", (req, res) => {
- nightmare
-  .goto('https://watchoutmovies.vercel.app/')
-  .wait(2000) // Optional: Add a wait time to ensure the page is fully loaded
-  .evaluate(() => {
-    // Perform scraping operations using JavaScript DOM manipulation
-    // Return the scraped data
-     const dom = new JSDOM(window.document.documentElement.innerHTML);
-    const document = dom.window.document;
-    const title = document.querySelector('h1').innerText;
-    const paragraphs = Array.from(document.querySelectorAll('p')).map(p => p.innerText);
-    return {
-      title,
-      paragraphs
-    };
-  })
-  .end()
-  .then(data => {
-    // Process and use the scraped data
-     res.json([data])
-  })
-  .catch(error => {
-    console.error('Error scraping website:', error);
+
+ fetch(req.query.url)
+  .then(response => response.text())
+  .then(html => {
+     let arr = [];
+   const dom = new JSDOM(html);
+const document = dom.window.document;
+
+const e = document.querySelectorAll("#card-list")[0]
+  
+   const title = Array.from(e.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
+      const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
+      const price = Array.from(e.querySelectorAll(".multi--price-sale--U-S0jtj")).map(f=> f.textContent)
+      // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+     const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
+ 
+  for(let i = 0; i < title.length; i++){
+arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
+     }
+
+   
+   res.json([{"products":arr}])
+      
   });
- // fetch("https://watchoutmovies.vercel.app/")
- //  .then(response => response.text())
- //  .then(html => {
- // const $ = cheerio.load(html);
- //        // Use Cheerio to select and scrape the desired content from the HTML
- //        // Example:
- //        const title = $('#root').text();
- //        const paragraphs = $('p').map((index, element) => $(element).text()).get();
- //   res.json([title,paragraphs])
- //   });
-});
+   });
+
     
                  
 app.get("/", (req, res) => {
