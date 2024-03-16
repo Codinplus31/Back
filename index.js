@@ -74,7 +74,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
    });
 app.get("/search", (req, res) => {
 
- fetch(req.query.query)
+ fetch('https://www.aliexpress.com/wholesale?SearchText='+req.query.query)
   .then(response => response.text())
   .then(html => {
      let arr = [];
