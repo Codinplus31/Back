@@ -102,7 +102,7 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
     
                  
 app.get("/", (req, res) => {
-  fetch("https://www.aliexpress.com/wholesale?SearchText=popular product")
+  fetch("https://www.aliexpress.com/wholesale?SearchText=randomize products from all category")
   .then(response => response.text())
   .then(html => {
       let arr = [];
