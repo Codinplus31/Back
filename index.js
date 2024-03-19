@@ -112,7 +112,7 @@ const document = dom.window.document;
 const e = document.querySelectorAll("#card-list")[0]
   
    const title = Array.from(e.querySelectorAll(".multi--titleText--nXeOvyr")).map(f=> f.textContent)
-      const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelector(".images--item--3XZa6xf").src);
+      const img = Array.from(e.querySelectorAll("div.images--imageWindow--1Z-J9gn")).map(f=> f.querySelectorAll(".images--item--3XZa6xf")[0].src);
       const price = Array.from(e.querySelectorAll(".multi--price-sale--U-S0jtj")).map(f=> f.textContent)
       // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
      const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
