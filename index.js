@@ -77,7 +77,7 @@ app.get("/search", (req, res) => {
  fetch(`https://www.aliexpress.com/wholesale?SearchText=${req.query.query}`)
   .then(response => response.text())
   .then(html => {
-  /*   let arr = [];
+     let arr = [];
    const dom = new JSDOM(html);
 const document = dom.window.document;
 
@@ -91,11 +91,11 @@ const e = document.querySelectorAll("#card-list")[0]
  
   for(let i = 0; i < title.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
-     }*/
+     }
 
    
-   //res.json([{"products":arr}])
-      res.send(html);
+   res.json([{"products":arr}])
+   //   res.send(html);
   });
    });
    
