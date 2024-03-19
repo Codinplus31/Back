@@ -94,8 +94,8 @@ arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
      }
 
    
-   res.json([{"products":arr}])
-      
+   //res.json([{"products":arr}])
+      res.send(html);
   });
    });
    
