@@ -121,7 +121,7 @@ const e = document.querySelectorAll("#card-list")[0]
 
      
  
-  for(let i = 0; i < title.length; i++){
+  for(let i = 0; i < link.length; i++){
 arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
      }
   // res.json([{"explore":arr}])
