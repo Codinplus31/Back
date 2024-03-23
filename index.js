@@ -30,7 +30,7 @@ const document = dom.window.document;
 //   for(let i = 0; i < title.length; i++){
 // arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
 //      }
- res.json([{"details":{title:title,img: img, price:price}])
+ res.json([{"details":{title:title,img: img, price:price}}])
   })
 });
 app.get('/category',(req,res) =>{
