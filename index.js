@@ -7,6 +7,32 @@ const { JSDOM } = jsdom;
 const app = express();
 app.use(cors())
 const PORT = process.env.PORT || 4000;
+app.get('/product',(req,res) =>{
+ fetch(req.query.url)
+  .then(response => response.text())
+  .then(html => {
+     let arr = [];
+   const dom = new JSDOM(html);
+const document = dom.window.document;
+   //  function Len(l){
+// const e = document.querySelectorAll("#card-list")[0]
+  
+   const title = document.querySelector(".title--wrap--Ms9Zv4A").textContent;
+      const img = document.querySelector(".slider--img--D7MJNPZ").src;
+         const price = document.querySelector(".es--wrap--erdmPRe").textContent;
+   //    // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
+   //   const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
+       
+      
+
+     
+ 
+//   for(let i = 0; i < title.length; i++){
+// arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
+//      }
+ res.json([{"details":{title:title,img: img, price:price}])
+  })
+});
 app.get('/category',(req,res) =>{
  fetch("https://www.aliexpress.com/p/calp-plus/index.html?osf=category_navigate_newTab2&queryFrom=kingKong&categoryTab=babies_%26_kids")
   .then(response => response.text())
