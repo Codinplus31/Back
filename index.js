@@ -17,7 +17,7 @@ const document = dom.window.document;
    //  function Len(l){
 // const e = document.querySelectorAll("#card-list")[0]
   
-   const title = document.querySelector(".title--wrap--Ms9Zv4A").textContent;
+   // const title = document.querySelector(".title--wrap--Ms9Zv4A").textContent;
       const img = document.querySelector(".slider--img--D7MJNPZ").src;
          const price = document.querySelector(".es--wrap--erdmPRe").textContent;
    //    // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
@@ -30,7 +30,7 @@ const document = dom.window.document;
 //   for(let i = 0; i < title.length; i++){
 // arr.push({title: title[i],img: img[i],price: price[i],link: link[i]})
 //      }
- res.json([{"details":{title:title,img: img, price:price}}])
+ res.json([{"details":{img: img, price:price}}])
   })
 });
 app.get('/category',(req,res) =>{
