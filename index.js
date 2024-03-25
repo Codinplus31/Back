@@ -18,8 +18,8 @@ const document = dom.window.document;
 // const e = document.querySelectorAll("#card-list")[0]
   
    // const title = document.querySelector(".title--wrap--Ms9Zv4A").textContent;
-      const img = document.querySelector(".slider--img--D7MJNPZ").src;
-         const price = document.querySelector(".es--wrap--erdmPRe").textContent;
+      // const img = document.querySelector(".slider--img--D7MJNPZ").src;
+      //    const price = document.querySelector(".es--wrap--erdmPRe").textContent;
    //    // const owner = e.querySelector(".cards--storeLink--XkKUQFS")
    //   const link = Array.from(e.querySelectorAll(".multi--container--1UZxxHY")).map(f=> f.href)
        
